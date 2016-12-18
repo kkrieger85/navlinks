@@ -55,7 +55,7 @@
         <layout>
             <updates>
                 <kkrieger_navlinks>
-                    <file>kkrieger_navlinks.xml</file>
+                    <file>kkrieger-navlinks.xml</file>
                 </kkrieger_navlinks>
             </updates>
         </layout>
