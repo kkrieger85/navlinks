@@ -1,0 +1,51 @@
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $_categories = $_helper->getStoreCategories() ?>
+<?php $currentCategory = Mage::registry('current_category') ?>
+<?php if ($currentCategory) {
+    $current_cat = $currentCategory->getId();
+} ?>
+<?php if (count($_categories) > 0): ?>
+    <?php foreach ($_categories as $_category): ?>
+        <?php
+        #print_r($_category->debug());die('</pre>');
+        ?>
+		<li class="top-parent <?php if ($_category->getId() == $current_cat) {
+            echo 'active';
+        } ?>">
+			<a href="<?php echo $_category->getExternalLink() == '' ? $_helper->getCategoryUrl($_category) : $_category->getExternalLink() ?>"><?php echo $_category->getName() ?></a>
+            <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+            <?php $_subcategories = $_category->getChildrenCategories() ?>
+
+            <?php if (count($_subcategories) > 0): ?>
+				<ul>
+                    <?php foreach ($_subcategories as $_subcategory): ?>
+						<li class="<?php if ($_subcategory->getId() == $current_cat) {
+                            echo 'active';
+                        } ?>">
+							<a href="<?php echo $_subcategory->getExternalLink() == '' ? $_helper->getCategoryUrl($_subcategory) : $_subcategory->getExternalLink() ?>">
+                                <?php echo $_subcategory->getName() ?>
+							</a>
+							<!--sub sub category-->
+                            <?php $_subcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                            <?php $_subsubcategories = $_subcategory->getChildrenCategories() ?>
+                            <?php if (count($_subsubcategories) > 0): ?>
+								<ul>
+                                    <?php foreach ($_subsubcategories as $_subsubcategory): ?>
+										<li class="<?php if ($_subsubcategory->getId() == $current_cat) {
+                                            echo 'active';
+                                        } ?>">
+											<a href="<?php echo $_subcategory->getExternalLink() == '' ? $_helper->getCategoryUrl($_subsubcategory) : $_subcategory->getExternalLink() ?>">
+                                                <?php echo $_subsubcategory->getName() ?>
+											</a>
+										</li>
+                                    <?php endforeach; ?>
+								</ul>
+                            <?php endif; ?>
+							<!--sub sub category-->
+						</li>
+                    <?php endforeach; ?>
+				</ul>
+            <?php endif; ?>
+		</li>
+    <?php endforeach; ?>
+<?php endif; ?>

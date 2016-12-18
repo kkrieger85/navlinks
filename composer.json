@@ -1,0 +1,40 @@
+{
+  "name": "careware/navlinks",
+  "type": "magento-module",
+  "description": "Enables you to use http-links in navigation",
+  "license": [
+    "OSL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Kevin Krieger",
+      "email": "kk@kkrieger.de"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*",
+    "careware/bds-theme": "^1.0.0"
+  },
+  "extra": {
+    "magento-root-dir": "./",
+    "magento-deploystrategy": "link",
+    "map": [
+      [
+        "./app/code/local/Kkrieger/Navlinks",
+        "./app/code/local/Kkrieger/Navlinks"
+      ],
+      [
+        "/app/design/frontend/boilerplate/bds/layout/kkrieger-navlinks.xml",
+        "/app/design/frontend/boilerplate/bds/layout/kkrieger-navlinks.xml"
+      ],
+      [
+        "/app/design/frontend/boilerplate/bds/template/kkrieger/navlinks",
+        "/app/design/frontend/boilerplate/bds/template/kkrieger/navlinks"
+      ],
+      [
+        "/app/etc/modules/Kkrieger_Navlinks.xml",
+        "/app/etc/modules/Kkrieger_Navlinks.xml"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Kkrieger_Navlinks>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Catalog/>
+
+            </depends>
+        </Kkrieger_Navlinks>
+    </modules>
+</config>
