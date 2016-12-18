@@ -3,10 +3,12 @@
 
 <layout version="0.1.0">
     <default>
-        <remove name="catalog.topnav.renderer"></remove>
-        <reference name="catalog.topnav">
-            <block type="page/html_topmenu_renderer" name="catalog.topnav.renderer"
-                   template="kkrieger/navlinks/page/html/topmenu/renderer.phtml"/>
+        <remove name="catalog.topnav"></remove>
+        <reference name="top.menu">
+            <block type="page/html_topmenu" name="catalog.topnav.navlinks" template="page/html/topmenu.phtml">
+                <block type="page/html_topmenu_renderer" name="catalog.topnav.renderer"
+                       template="kkrieger/navlinks/page/html/topmenu/renderer.phtml"/>
+            </block>
         </reference>
     </default>
 </layout>
