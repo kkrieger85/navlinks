@@ -13,7 +13,7 @@
   ],
   "require": {
     "magento-hackathon/magento-composer-installer": "*",
-    "careware/bds-theme": "^1.0.0"
+    "webcomm/magento-boilerplate": "*"
   },
   "extra": {
     "magento-root-dir": "./",
@@ -24,12 +24,12 @@
         "./app/code/local/Kkrieger/Navlinks"
       ],
       [
-        "/app/design/frontend/boilerplate/bds/layout/kkrieger-navlinks.xml",
-        "/app/design/frontend/boilerplate/bds/layout/kkrieger-navlinks.xml"
+        "/app/design/frontend/boilerplate/default/layout/kkrieger-navlinks.xml",
+        "/app/design/frontend/boilerplate/default/layout/kkrieger-navlinks.xml"
       ],
       [
-        "/app/design/frontend/boilerplate/bds/template/kkrieger/navlinks",
-        "/app/design/frontend/boilerplate/bds/template/kkrieger/navlinks"
+        "/app/design/frontend/boilerplate/default/template/kkrieger/navlinks",
+        "/app/design/frontend/boilerplate/default/template/kkrieger/navlinks"
       ],
       [
         "/app/etc/modules/Kkrieger_Navlinks.xml",
