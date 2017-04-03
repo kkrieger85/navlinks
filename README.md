@@ -1,11 +1,11 @@
-#kkrieger/navlinks
+# kkrieger/navlinks
 
 Magento module to add external links in your default navigation
 
-##Features
+## Features
 
-##Installation
+## Installation
 
-##Usage
+## Usage
 
-##License
+## License
